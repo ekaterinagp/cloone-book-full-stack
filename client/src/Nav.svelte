@@ -1,5 +1,6 @@
 <script>
   let ajUsers = [];
+  let txtSearch;
   let searchResultsDisplay = "none";
   // rewrite as one function
   const showSearchResults = () => {
@@ -54,7 +55,11 @@
   <div>CloneBook</div>
   <div id="searchContainer">
     <form action="">
-      <input type="text" on:focus={getData} on:blur={hideSearchResults} />
+      <input
+        type="text"
+        on:focus={getData}
+        on:blur={hideSearchResults}
+        bind:value={txtSearch} />
     </form>
     <div id="searchResults" style="display: {searchResultsDisplay}">
       {#each ajUsers as jUser}
